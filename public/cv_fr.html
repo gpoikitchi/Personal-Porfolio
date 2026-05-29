@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>CV — Messipsa Boussaid</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  @page { size: A4; margin: 0; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8.5pt;
+    color: #222;
+    background: white;
+    width: 210mm;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    padding: 16px 30px 12px;
+  }
+  .header h1 {
+    font-size: 22pt;
+    font-weight: 900;
+    color: #111;
+    letter-spacing: 1.5px;
+  }
+  .header .sub {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #111;
+    margin-top: 5px;
+  }
+  .header .domains {
+    font-size: 8.5pt;
+    color: #111;
+    margin-top: 2px;
+  }
+  .header-rule {
+    border: none;
+    border-top: 1.5px solid #bbb;
+    margin: 10px 18px 0;
+  }
+
+  /* ── BODY ── */
+  .body {
+    display: flex;
+    padding: 0;
+  }
+
+  /* ── LEFT ── */
+  .left {
+    width: 62mm;
+    padding: 13px 12px 13px 18px;
+    border-right: 1px solid #ccc;
+    flex-shrink: 0;
+  }
+
+  /* ── RIGHT ── */
+  .right {
+    flex: 1;
+    padding: 13px 18px 13px 14px;
+  }
+
+  /* ── SECTION TITLE ── */
+  .sec-title {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #1a8787;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #1a8787;
+    padding-bottom: 2px;
+    margin-bottom: 7px;
+  }
+  .sec { margin-bottom: 13px; }
+
+  /* ── CONTACT ── */
+  .contact-line {
+    font-size: 8pt;
+    color: #333;
+    margin-bottom: 2.5px;
+  }
+
+  /* ── SKILLS ── */
+  .skill-title {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #1a8787;
+    margin-top: 7px;
+    margin-bottom: 2px;
+  }
+  .blist { list-style: none; padding-left: 0; }
+  .blist li {
+    font-size: 8pt;
+    color: #333;
+    padding: 1px 0 1px 11px;
+    position: relative;
+  }
+  .blist li::before {
+    content: '\2022';
+    position: absolute;
+    left: 1px;
+    color: #1a8787;
+  }
+
+  /* ── EDU ── */
+  .edu-item { margin-bottom: 9px; }
+  .edu-row { display: flex; justify-content: space-between; align-items: baseline; }
+  .edu-school { font-size: 9pt; font-weight: 700; color: #111; }
+  .edu-date { font-size: 8pt; color: #555; font-style: italic; white-space: nowrap; margin-left: 8px; }
+  .edu-degree { font-size: 8pt; color: #333; margin-top: 1px; }
+  .edu-note { font-size: 8pt; color: #555; font-style: italic; }
+
+  /* ── EXP ── */
+  .exp-item { margin-bottom: 11px; }
+  .exp-row { display: flex; justify-content: space-between; align-items: baseline; }
+  .exp-title { font-size: 9pt; font-weight: 700; color: #111; }
+  .exp-date { font-size: 8pt; color: #555; font-style: italic; white-space: nowrap; margin-left: 8px; }
+  .exp-location { font-size: 8pt; color: #555; font-style: italic; margin-top: 1px; }
+  .exp-desc { font-size: 8pt; color: #333; margin-top: 2px; }
+
+  /* ── PROJECTS ── */
+  .proj-cat {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #1a8787;
+    margin: 4px 0 5px;
+  }
+  .proj-item { margin-bottom: 7px; }
+  .proj-name { font-size: 8.5pt; font-weight: 700; color: #111; }
+  .proj-tech { font-size: 8pt; color: #555; font-style: italic; }
+  .proj-desc { font-size: 8pt; color: #333; margin-top: 1px; }
+
+  /* ── CERTS ── */
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 3px;
+    font-size: 8pt;
+    color: #333;
+  }
+  .cert-year { color: #555; font-style: italic; white-space: nowrap; margin-left: 8px; }
+
+  @media print {
+    html, body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h1>MESSIPSA BOUSSAID</h1>
+  <div class="sub">Recherche d'alternance 24 mois &agrave; partir de septembre 2026 &nbsp;&bull;&nbsp; Grenoble M&eacute;tropolitaine</div>
+  <div class="domains">R&eacute;seaux &bull; Syst&egrave;mes &bull; Cloud Computing &bull; Cybers&eacute;curit&eacute;</div>
+</div>
+<hr class="header-rule">
+
+<!-- BODY -->
+<div class="body">
+
+  <!-- LEFT -->
+  <div class="left">
+
+    <!-- CONTACT -->
+    <div class="sec">
+      <div class="sec-title">Contact</div>
+      <div class="contact-line">messipsa.boussaid@gmail.com</div>
+      <div class="contact-line">+33 7 49 43 03 38</div>
+      <div class="contact-line">linkedin.com/in/messipsa-boussaid-37b4a5225</div>
+      <div class="contact-line">github.com/gpoikitchi</div>
+      <div class="contact-line">Permis B</div>
+    </div>
+
+    <!-- COMPÉTENCES -->
+    <div class="sec">
+      <div class="sec-title">Comp&eacute;tences</div>
+
+      <div class="skill-title">Syst&egrave;mes &amp; R&eacute;seaux</div>
+      <ul class="blist">
+        <li>Syst&egrave;mes d'exploitation &amp; prog. syst&egrave;me</li>
+        <li>Conception de syst&egrave;mes d'exploitation</li>
+        <li>Programmation concurrente</li>
+        <li>R&eacute;seaux OSI / TCP-IP</li>
+        <li>Administration LAN / intranet, VLAN</li>
+        <li>S&eacute;curit&eacute; r&eacute;seau</li>
+      </ul>
+
+      <div class="skill-title">S&eacute;curit&eacute; &amp; Cryptographie</div>
+      <ul class="blist">
+        <li>Cryptographie &amp; Alg&egrave;bre pour la crypto</li>
+        <li>OWASP ZAP, scraping, tests d'intrusion</li>
+      </ul>
+
+      <div class="skill-title">D&eacute;veloppement &amp; G&eacute;nie logiciel</div>
+      <ul class="blist">
+        <li>G&eacute;nie logiciel, conception OO</li>
+        <li>Compilation &amp; langages formels</li>
+        <li>Calcul parall&egrave;le et distribu&eacute;</li>
+      </ul>
+
+      <div class="skill-title">Langages de programmation</div>
+      <ul class="blist">
+        <li>C, C++, Java, Python</li>
+        <li>Assembleur ARM &amp; MIPS</li>
+        <li>VHDL</li>
+        <li>Next.js (JavaScript)</li>
+      </ul>
+
+      <div class="skill-title">IA &amp; Data</div>
+      <ul class="blist">
+        <li>Machine Learning, r&eacute;seaux de neurones</li>
+        <li>LLMs</li>
+      </ul>
+
+      <div class="skill-title">Algorithmique &amp; Maths</div>
+      <ul class="blist">
+        <li>Algorithmique avanc&eacute;e</li>
+        <li>Math&eacute;matiques &amp; probabilit&eacute;s</li>
+      </ul>
+
+      <div class="skill-title">Outils &amp; DevOps</div>
+      <ul class="blist">
+        <li>Docker, machines virtuelles</li>
+        <li>Cloud (AWS)</li>
+        <li>GDB, Valgrind, debugging avanc&eacute;</li>
+        <li>Git, Shell scripting</li>
+      </ul>
+
+      <div class="skill-title">Bases de donn&eacute;es</div>
+      <ul class="blist">
+        <li>SQLite, PostgreSQL</li>
+      </ul>
+    </div>
+
+    <!-- LANGUES -->
+    <div class="sec">
+      <div class="sec-title">Langues</div>
+      <ul class="blist">
+        <li><strong>Anglais</strong> : Bilingue</li>
+        <li><strong>Fran&ccedil;ais</strong> : Bilingue</li>
+        <li><strong>Arabe</strong> : Bilingue</li>
+        <li><strong>Kabyle</strong> : Langue maternelle</li>
+      </ul>
+    </div>
+
+    <!-- QUALITÉS -->
+    <div class="sec">
+      <div class="sec-title">Qualit&eacute;s</div>
+      <ul class="blist">
+        <li>Travail en &eacute;quipe</li>
+        <li>Rigueur &amp; organisation</li>
+        <li>Formel, ponctuel &amp; souriant</li>
+        <li>Curieux &amp; proactif</li>
+      </ul>
+    </div>
+
+    <!-- LOISIRS -->
+    <div class="sec">
+      <div class="sec-title">Loisirs</div>
+      <ul class="blist">
+        <li>Veille technologique</li>
+        <li>Padel</li>
+        <li>Blues &amp; Jazz</li>
+      </ul>
+    </div>
+
+  </div><!-- end left -->
+
+  <!-- RIGHT -->
+  <div class="right">
+
+    <!-- FORMATION -->
+    <div class="sec">
+      <div class="sec-title">Formation</div>
+
+      <div class="edu-item">
+        <div class="edu-row">
+          <div class="edu-school">ESGI Grenoble</div>
+          <div class="edu-date">2026 &ndash; 2028</div>
+        </div>
+        <div class="edu-degree">Mast&egrave;re R&eacute;seaux, Syst&egrave;mes, Cloud Computing &amp; S&eacute;curit&eacute;</div>
+        <div class="edu-note">En alternance 24 mois &mdash; recherche en cours, Grenoble M&eacute;tropolitaine</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-row">
+          <div class="edu-school">Universit&eacute; Grenoble Alpes &mdash; UFR IM2AG</div>
+          <div class="edu-date">2025 &ndash; 2026</div>
+        </div>
+        <div class="edu-degree">Master 1 Informatique G&eacute;n&eacute;rale <em>(en cours)</em></div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-row">
+          <div class="edu-school">Universit&eacute; Grenoble Alpes</div>
+          <div class="edu-date">2022 &ndash; 2025</div>
+        </div>
+        <div class="edu-degree">Licence Informatique G&eacute;n&eacute;rale</div>
+      </div>
+    </div>
+
+    <!-- EXPÉRIENCES -->
+    <div class="sec">
+      <div class="sec-title">Exp&eacute;riences</div>
+
+      <div class="exp-item">
+        <div class="exp-row">
+          <div class="exp-title">Stage &mdash; Design Factory UGA &amp; VertIT</div>
+          <div class="exp-date">Avr. &ndash; 24 Juil. 2026</div>
+        </div>
+        <div class="exp-location">Grenoble &mdash; Auvergne-Rh&ocirc;ne-Alpes</div>
+        <div class="exp-desc">Souverainet&eacute; num&eacute;rique, transition &eacute;cologique &amp; migration vers l&rsquo;open source</div>
+        <ul class="blist" style="margin-top:3px;">
+          <li>Audit et recommandations pour la migration des outils propri&eacute;taires vers des solutions open source (LibreOffice, Nextcloud)</li>
+          <li>Analyse des enjeux de souverainet&eacute; num&eacute;rique et de l&rsquo;empreinte carbone des outils en entreprise</li>
+          <li>Participation au projet de transition &eacute;cologique num&eacute;rique et r&eacute;daction de livrables</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-row">
+          <div class="exp-title">Freelance &mdash; D&eacute;veloppeur Web</div>
+          <div class="exp-date">2024 &ndash; 2025</div>
+        </div>
+        <ul class="blist" style="margin-top:3px;">
+          <li>Conception et d&eacute;veloppement d&rsquo;une application web de gestion de convoyage (Next.js / TypeScript)</li>
+          <li>Interface responsive, gestion des utilisateurs et des donn&eacute;es de transport</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- PROJETS -->
+    <div class="sec">
+      <div class="sec-title">Projets</div>
+
+      <div class="proj-cat">Projets personnels</div>
+
+      <div class="proj-item">
+        <div><span class="proj-name">VPN CLI &mdash; D&eacute;ploiement Cloud</span></div>
+        <div class="proj-desc">Impl&eacute;mentation d&rsquo;un VPN pilot&eacute; en ligne de commande et d&eacute;ploy&eacute; sur infrastructure cloud &mdash; gestion des tunnels, authentification et routage</div>
+      </div>
+
+      <div class="proj-cat">D&eacute;veloppement de logiciels</div>
+
+      <div class="proj-item">
+        <div><span class="proj-name">Syst&egrave;me d&rsquo;exploitation Nachos</span> <span class="proj-tech">(C/C++)</span></div>
+        <ul class="blist" style="margin-top:2px;">
+          <li>Impl&eacute;mentation d&rsquo;une console d&rsquo;E/S synchronis&eacute;e</li>
+          <li>Interface de threads utilisateur</li>
+          <li>Gestion de la m&eacute;moire pagin&eacute;e</li>
+          <li>Gestion multi-processus avec allocateur de heap dynamique</li>
+          <li>Syst&egrave;me de fichiers</li>
+          <li>Couche r&eacute;seau fiable (Stop-and-Wait ARQ) : gestion des connexions, synchronisation</li>
+        </ul>
+      </div>
+
+      <div class="proj-item">
+        <div><span class="proj-name">Application de messagerie TCP/IP</span> <span class="proj-tech">(Java)</span></div>
+        <div class="proj-desc">Gestion des connexions, &eacute;changes de messages et synchronisation &mdash; architecture client/serveur temps r&eacute;el</div>
+      </div>
+
+      <div class="proj-item">
+        <div><span class="proj-name">Simulateur ARMv5</span> <span class="proj-tech">(C)</span></div>
+        <div class="proj-desc">Impl&eacute;mentation d&rsquo;un interpr&eacute;teur d&rsquo;instructions ARMv5 avec simulation dans GDB</div>
+      </div>
+
+      <div class="proj-item">
+        <div><span class="proj-name">Linker ELF</span> <span class="proj-tech">(C)</span></div>
+        <div class="proj-desc">Gestion des symboles, tables de relocation et chargement dynamique en m&eacute;moire simul&eacute;e</div>
+      </div>
+
+      <div class="proj-item">
+        <div><span class="proj-name">Jeux Onitama, Tablut, Sokoban</span> <span class="proj-tech">(Java)</span></div>
+        <div class="proj-desc">Moteur de jeu complet, interface graphique et IA multi-niveaux (algorithmes de recherche &amp; heuristiques)</div>
+      </div>
+
+      <div class="proj-cat">Machine Learning</div>
+
+      <div class="proj-item">
+        <div><span class="proj-name">Perceptron multicouche (MLP) &mdash; Classification m&eacute;dicale</span> <span class="proj-tech">(Python)</span></div>
+        <div class="proj-desc">Entra&icirc;nement d&rsquo;un MLP pour pr&eacute;dire l&rsquo;&eacute;tat de sant&eacute; de patients &mdash; pr&eacute;traitement et &eacute;valuation des performances</div>
+      </div>
+
+      <div class="proj-item">
+        <div><span class="proj-name">Reconnaissance d&rsquo;images avec r&eacute;seaux de neurones</span> <span class="proj-tech">(Python)</span></div>
+        <div class="proj-desc">Classification MNIST, entra&icirc;nement supervis&eacute;, visualisation et ajustement du mod&egrave;le</div>
+      </div>
+    </div>
+
+    <!-- FORMATIONS COMPLÉMENTAIRES -->
+    <div class="sec">
+      <div class="sec-title">Formations Compl&eacute;mentaires</div>
+
+      <div class="cert-item">
+        <span>AWS Cloud Practitioner Essentials &mdash; AWS Skill Builder</span>
+        <span class="cert-year">2025</span>
+      </div>
+      <div class="cert-item">
+        <span>Learning AI Through Visualization &mdash; Universit&eacute; Columbia</span>
+        <span class="cert-year">2025</span>
+      </div>
+      <div class="cert-item">
+        <span>Cisco CCNA 200-301 &mdash; Jeremy&rsquo;s IT Lab</span>
+        <span class="cert-year">2025</span>
+      </div>
+      <div class="cert-item">
+        <span>Introduction to Cybersecurity &mdash; Harvard CS50</span>
+        <span class="cert-year">2024&ndash;2025</span>
+      </div>
+      <div class="cert-item">
+        <span>Linux Fundamentals &mdash; Hack The Box Academy</span>
+        <span class="cert-year">2024&ndash;2025</span>
+      </div>
+    </div>
+
+  </div><!-- end right -->
+</div><!-- end body -->
+
+</body>
+</html>

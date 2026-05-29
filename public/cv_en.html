@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Resume — Messipsa Boussaid</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  @page { size: A4; margin: 0; }
+
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8.5pt;
+    color: #1a1a2e;
+    background: white;
+    width: 210mm;
+    height: 297mm;
+    overflow: hidden;
+  }
+
+  .header {
+    background: #1e1b4b;
+    padding: 13px 18px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .header-left h1 {
+    font-size: 21pt;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -0.5px;
+    line-height: 1;
+  }
+  .header-left h1 span { color: #818cf8; }
+  .header-left .title { font-size: 8.5pt; color: #c7d2fe; margin-top: 4px; }
+  .header-left .meta {
+    margin-top: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 14px;
+    font-size: 7.5pt;
+    color: #a5b4fc;
+  }
+  .header-left .meta span::before { content: '·'; margin-right: 5px; color: #6366f1; }
+  .header-left .meta span:first-child::before { content: ''; margin: 0; }
+  .badge {
+    background: rgba(99,102,241,0.35);
+    border: 1px solid rgba(129,140,248,0.45);
+    color: #c7d2fe;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 7.5pt;
+    font-weight: 700;
+    white-space: nowrap;
+    margin-top: 4px;
+  }
+
+  .body { display: flex; height: calc(297mm - 76px); }
+
+  .left {
+    width: 178px;
+    background: #f4f4fc;
+    padding: 13px 13px 10px;
+    border-right: 1px solid #ddd6fe;
+    flex-shrink: 0;
+  }
+
+  .right { flex: 1; padding: 13px 16px 10px; overflow: hidden; }
+
+  .sec-title {
+    font-size: 7pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #4f46e5;
+    padding-bottom: 3px;
+    border-bottom: 1.5px solid #ddd6fe;
+    margin-bottom: 7px;
+  }
+  .sec { margin-bottom: 12px; }
+
+  .contact-row { display: flex; align-items: baseline; gap: 4px; margin-bottom: 3px; font-size: 7.5pt; }
+  .contact-row .lbl { color: #9ca3af; width: 42px; flex-shrink: 0; }
+  .contact-row a, .contact-row span { color: #4f46e5; font-size: 7.5pt; }
+
+  .skill-group { margin-bottom: 8px; }
+  .skill-group-title { font-size: 7.5pt; font-weight: 700; color: #312e81; margin-bottom: 4px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 3px; }
+  .tag { background: #ede9fe; color: #4338ca; padding: 1.5px 7px; border-radius: 9px; font-size: 7pt; }
+
+  .lang-row { display: flex; justify-content: space-between; font-size: 8pt; margin-bottom: 4px; }
+  .lang-row .lang-name { color: #374151; font-weight: 500; }
+  .lang-row .lang-lvl { color: #4f46e5; font-weight: 700; font-size: 7.5pt; }
+
+  .quality { font-size: 8pt; color: #374151; margin-bottom: 3px; }
+  .quality::before { content: '› '; color: #4f46e5; font-weight: 700; }
+
+  .hobby { font-size: 8pt; color: #6b7280; margin-bottom: 3px; }
+
+  .edu-item { margin-bottom: 9px; }
+  .edu-row { display: flex; justify-content: space-between; align-items: baseline; }
+  .edu-degree { font-size: 8.5pt; font-weight: 700; color: #1e1b4b; }
+  .edu-date { font-size: 7.5pt; color: #6b7280; white-space: nowrap; margin-left: 6px; }
+  .edu-school { font-size: 8pt; color: #4f46e5; font-weight: 600; margin-top: 1px; }
+  .edu-desc { font-size: 7.5pt; color: #6b7280; font-style: italic; margin-top: 1px; }
+
+  .exp-item { margin-bottom: 10px; }
+  .exp-row { display: flex; justify-content: space-between; align-items: baseline; }
+  .exp-title { font-size: 8.5pt; font-weight: 700; color: #1e1b4b; }
+  .exp-date { font-size: 7.5pt; color: #6b7280; white-space: nowrap; margin-left: 6px; }
+  .exp-company { font-size: 8pt; color: #4f46e5; font-weight: 600; margin-top: 1px; }
+  .bullets { margin-top: 4px; padding-left: 0; list-style: none; }
+  .bullets li { font-size: 7.5pt; color: #374151; padding: 1px 0 1px 11px; position: relative; }
+  .bullets li::before { content: '•'; position: absolute; left: 1px; color: #818cf8; }
+
+  .proj-item { margin-bottom: 7px; }
+  .proj-row { display: flex; align-items: baseline; gap: 4px; }
+  .proj-name { font-size: 8pt; font-weight: 700; color: #1e1b4b; }
+  .proj-tech { font-size: 7.5pt; color: #6366f1; }
+  .proj-desc { font-size: 7.5pt; color: #374151; margin-top: 1px; }
+
+  .cert-item { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 4px; }
+  .cert-left { flex: 1; }
+  .cert-name { font-size: 8pt; color: #1a1a2e; }
+  .cert-org { font-size: 7.5pt; color: #4f46e5; font-style: italic; }
+  .cert-year { font-size: 7.5pt; color: #9ca3af; white-space: nowrap; margin-left: 6px; }
+
+  @media print {
+    html, body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-left">
+    <h1>MESSIPSA <span>BOUSSAID</span></h1>
+    <div class="title">M1 Computer Science Student — UGA &nbsp;·&nbsp; Future ESGI Master's in Networks &amp; Security 2026</div>
+    <div class="meta">
+      <span>Greater Grenoble Area</span>
+      <span>messipsa.boussaid@gmail.com</span>
+      <span>+33 7 49 43 03 38</span>
+      <span>Driving Licence</span>
+      <span>linkedin.com/in/messipsa-boussaid-37b4a5225</span>
+      <span>github.com/gpoikitchi</span>
+    </div>
+  </div>
+  <div class="badge">Work-study 24 months — Sept. 2026</div>
+</header>
+
+<div class="body">
+
+  <!-- LEFT -->
+  <aside class="left">
+
+    <div class="sec">
+      <div class="sec-title">Technical Skills</div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Systems &amp; Networks</div>
+        <div class="tags">
+          <span class="tag">OS &amp; system prog.</span>
+          <span class="tag">OS design</span>
+          <span class="tag">Concurrent prog.</span>
+          <span class="tag">OSI/TCP-IP networks</span>
+          <span class="tag">LAN/VLAN admin</span>
+          <span class="tag">Network security</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Security &amp; Cryptography</div>
+        <div class="tags">
+          <span class="tag">Cryptography</span>
+          <span class="tag">OWASP ZAP</span>
+          <span class="tag">Penetration testing</span>
+          <span class="tag">Scraping</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">Programming Languages</div>
+        <div class="tags">
+          <span class="tag">C / C++</span>
+          <span class="tag">Java</span>
+          <span class="tag">Python</span>
+          <span class="tag">ARM/MIPS Assembly</span>
+          <span class="tag">VHDL</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">DevOps &amp; Cloud</div>
+        <div class="tags">
+          <span class="tag">Docker</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Git</span>
+          <span class="tag">Shell scripting</span>
+          <span class="tag">GDB / Valgrind</span>
+          <span class="tag">Virtual machines</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-title">AI &amp; Databases</div>
+        <div class="tags">
+          <span class="tag">Machine Learning</span>
+          <span class="tag">LLMs</span>
+          <span class="tag">PostgreSQL</span>
+          <span class="tag">SQLite</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">Languages</div>
+      <div class="lang-row"><span class="lang-name">🇫🇷 French</span><span class="lang-lvl">Bilingual</span></div>
+      <div class="lang-row"><span class="lang-name">🇬🇧 English</span><span class="lang-lvl">Bilingual</span></div>
+      <div class="lang-row"><span class="lang-name">🇩🇿 Arabic</span><span class="lang-lvl">Bilingual</span></div>
+      <div class="lang-row"><span class="lang-name">🏔️ Kabyle</span><span class="lang-lvl">Mother tongue</span></div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">Soft Skills</div>
+      <div class="quality">Rigour &amp; organisation</div>
+      <div class="quality">Teamwork</div>
+      <div class="quality">Formal &amp; punctual</div>
+      <div class="quality">Curious &amp; proactive</div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">Interests</div>
+      <div class="hobby">💻 Technology watch</div>
+      <div class="hobby">🎾 Padel</div>
+      <div class="hobby">🎵 Blues &amp; Jazz</div>
+    </div>
+
+  </aside>
+
+  <!-- RIGHT -->
+  <main class="right">
+
+    <div class="sec">
+      <div class="sec-title">Education</div>
+
+      <div class="edu-item">
+        <div class="edu-row">
+          <div class="edu-degree">Master's — Networks, Systems, Cloud Computing &amp; Security</div>
+          <div class="edu-date">2026 – 2028</div>
+        </div>
+        <div class="edu-school">ESGI Grenoble</div>
+        <div class="edu-desc">24-month work-study — seeking placement · Greater Grenoble Area</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-row">
+          <div class="edu-degree">M1 General Computer Science <span style="color:#9ca3af;font-weight:400;font-size:7.5pt;">(in progress)</span></div>
+          <div class="edu-date">2025 – 2026</div>
+        </div>
+        <div class="edu-school">University Grenoble Alpes — UFR IM2AG</div>
+        <div class="edu-desc">Programming, networks, systems, databases, software engineering and discrete mathematics</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-row">
+          <div class="edu-degree">Bachelor's in General Computer Science</div>
+          <div class="edu-date">2022 – 2025</div>
+        </div>
+        <div class="edu-school">University Grenoble Alpes</div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">Professional Experience</div>
+
+      <div class="exp-item">
+        <div class="exp-row">
+          <div class="exp-title">Internship — Digital Sovereignty &amp; Open Source</div>
+          <div class="exp-date">Apr. – Jul. 24, 2026</div>
+        </div>
+        <div class="exp-company">Design Factory UGA &amp; VertIT &nbsp;·&nbsp; Grenoble</div>
+        <ul class="bullets">
+          <li>Audit and recommendations for migrating proprietary tools to open-source solutions (LibreOffice, Nextcloud)</li>
+          <li>Analysis of digital sovereignty issues and carbon footprint of enterprise digital tools</li>
+          <li>Participation in the digital ecological transition project and delivery of technical reports</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-row">
+          <div class="exp-title">Freelance — Web Developer</div>
+          <div class="exp-date">2024 – 2025</div>
+        </div>
+        <div class="exp-company">Independent mission</div>
+        <ul class="bullets">
+          <li>Design and development of a vehicle transport management web application (Next.js / TypeScript)</li>
+          <li>Responsive UI, user management and transport data handling</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">Technical Projects</div>
+
+      <div class="proj-item">
+        <div class="proj-row"><span class="proj-name">VPN CLI — Cloud Deployment</span><span class="proj-tech">· Shell / Cloud</span></div>
+        <div class="proj-desc">CLI-driven VPN implementation deployed on cloud infrastructure — tunnel management, authentication and routing</div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-row"><span class="proj-name">Nachos Operating System</span><span class="proj-tech">· C / C++</span></div>
+        <div class="proj-desc">Synchronized I/O, user threads, paged memory, multi-process management, file system, reliable network layer (Stop-and-Wait ARQ)</div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-row"><span class="proj-name">TCP/IP Messaging Application</span><span class="proj-tech">· Java</span></div>
+        <div class="proj-desc">Real-time client/server architecture — connection management, message exchange and multi-client synchronisation</div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-row"><span class="proj-name">ARMv5 Simulator &amp; ELF Linker</span><span class="proj-tech">· C</span></div>
+        <div class="proj-desc">ARMv5 instruction interpreter with GDB simulation · symbol management, relocation tables and dynamic loading</div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-row"><span class="proj-name">Machine Learning — Medical Classification &amp; MNIST</span><span class="proj-tech">· Python</span></div>
+        <div class="proj-desc">MLP for health status prediction · MNIST image recognition — supervised training and performance evaluation</div>
+      </div>
+
+      <div class="proj-item">
+        <div class="proj-row"><span class="proj-name">Games — Onitama, Tablut, Sokoban</span><span class="proj-tech">· Java</span></div>
+        <div class="proj-desc">Complete game engine, GUI and multi-level AI (search algorithms &amp; heuristics)</div>
+      </div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-title">Additional Training</div>
+
+      <div class="cert-item">
+        <div class="cert-left"><span class="cert-name">AWS Cloud Practitioner Essentials</span> — <span class="cert-org">AWS Skill Builder</span></div>
+        <div class="cert-year">2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-left"><span class="cert-name">Cisco CCNA 200-301</span> — <span class="cert-org">Jeremy's IT Lab</span></div>
+        <div class="cert-year">2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-left"><span class="cert-name">Linux Fundamentals</span> — <span class="cert-org">Hack The Box Academy</span></div>
+        <div class="cert-year">2024–2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-left"><span class="cert-name">Introduction to Cybersecurity</span> — <span class="cert-org">Harvard CS50</span></div>
+        <div class="cert-year">2024–2025</div>
+      </div>
+      <div class="cert-item">
+        <div class="cert-left"><span class="cert-name">Learning AI Through Visualization</span> — <span class="cert-org">Columbia University</span></div>
+        <div class="cert-year">2025</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
