@@ -31,7 +31,7 @@ export default function Footer() {
           </a>
         </div>
 
-        <p className="text-slate-300 dark:text-slate-700 text-xs">{f.builtWith}</p>
+
       </div>
     </footer>
   );
